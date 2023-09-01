@@ -1,0 +1,106 @@
+excluded:
+  - ${PWD}/DerivedData
+
+disabled_rules:
+  - discarded_notification_center_observer
+  - notification_center_detachment
+  - orphaned_doc_comment
+  - unused_capture_list
+  - trailing_closure
+  - implicitly_unwrapped_optional
+
+opt_in_rules:
+  - array_init
+  - attributes
+  - closure_end_indentation
+  - closure_spacing
+  - collection_alignment
+  - colon
+  - convenience_type
+  - discouraged_object_literal
+  - empty_collection_literal
+  - empty_string
+  - enum_case_associated_values_count
+  - fatal_error_message
+  - first_where
+  - force_unwrapping
+  - last_where
+  - legacy_random
+  - literal_expression_end_indentation
+  - multiline_function_chains
+  - multiline_literal_brackets
+  - operator_usage_whitespace
+  - pattern_matching_keywords
+  - prefer_self_type_over_type_of_self
+  - redundant_nil_coalescing
+  - redundant_type_annotation
+  - strict_fileprivate
+  - toggle_bool
+  - unneeded_parentheses_in_closure_argument
+  - vertical_whitespace_opening_braces
+  - vertical_whitespace_closing_braces
+  - yoda_condition
+  - todo
+  - multiline_arguments
+  - multiline_parameters
+
+attributes:
+  always_on_same_line:
+    - "@IBSegueAction"
+    - "@IBAction"
+    - "@NSManaged"
+    - "@objc"
+
+force_cast: warning
+force_try: warning
+function_body_length:
+    warning: 60
+    
+#3D coordinates x,y,z can be declared as (Float, Float, Float)
+large_tuple:
+    warning: 3
+    error: 4
+
+legacy_hashing: error
+
+identifier_name:
+  excluded:
+    - i
+    - x
+    - y
+    - z
+    - id #required for Identifiable protocol
+    - up
+    - dx
+    - dy
+    - uv
+    - to
+
+line_length:
+  warning: 200
+  error: 250
+  ignores_urls: true
+  ignores_function_declarations: true
+  ignores_comments: true
+  
+private_over_fileprivate:
+  validate_extensions: true
+
+trailing_whitespace:
+  ignores_empty_lines: true
+  ignores_comments: true
+
+vertical_whitespace:
+  max_empty_lines: 2
+
+multiline_arguments:
+  first_argument_location: any_line
+  only_enforce_after_first_closure_on_first_line: true
+
+custom_rules:
+  unittest_name_convention:
+    included: ".*Tests\\.swift"
+    name: "UnitTests name convention"
+    regex: "^([[:space:]]*(func[[:space:]]*test)[a-zA-Z0-9]*)((_)|((?!(_When_))))[a-zA-Z0-9]*[[:space:]]*[(][)]"
+    message: "UnitTest method names should follow pattern: test*_When_*_Then_* Examples: testDetailedModelFetched_When_SelectedModelIdentifierChanged, testDetailedModelDecodeSucceed_When_VaildMockResponseUsed"
+    severity: error
