@@ -17,11 +17,8 @@
 		36AAC8232A57084500B21350 /* MacOSAssignmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AAC8222A57084500B21350 /* MacOSAssignmentApp.swift */; };
 		36AAC8272A57084700B21350 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36AAC8262A57084700B21350 /* Assets.xcassets */; };
 		36AAC82A2A57084700B21350 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36AAC8292A57084700B21350 /* Preview Assets.xcassets */; };
-		36AAC8342A57084700B21350 /* MacOSAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AAC8332A57084700B21350 /* MacOSAssignmentTests.swift */; };
-		36AAC83E2A57084700B21350 /* MacOSAssignmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AAC83D2A57084700B21350 /* MacOSAssignmentUITests.swift */; };
-		36AAC8402A57084700B21350 /* MacOSAssignmentUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AAC83F2A57084700B21350 /* MacOSAssignmentUITestsLaunchTests.swift */; };
 		36AAC84F2A5708BF00B21350 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AAC84E2A5708BF00B21350 /* MainView.swift */; };
-		36AAC8602A5709A000B21350 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AAC85F2A5709A000B21350 /* CoreDataManager.swift */; };
+		36AAC8602A5709A000B21350 /* CoreDataManagerImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AAC85F2A5709A000B21350 /* CoreDataManagerImplementation.swift */; };
 		36AAC8632A57150100B21350 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36AAC8612A57150100B21350 /* DataModel.xcdatamodeld */; };
 		36AAC8662A57E9B500B21350 /* NSManagedObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AAC8652A57E9B500B21350 /* NSManagedObject+Extensions.swift */; };
 		36AAC8682A57EE3700B21350 /* SelectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AAC8672A57EE3700B21350 /* SelectionModel.swift */; };
@@ -35,6 +32,9 @@
 		36AAC87C2A58467C00B21350 /* ContentViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AAC8782A58467C00B21350 /* ContentViewViewModel.swift */; };
 		36AAC87D2A58467C00B21350 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AAC8792A58467C00B21350 /* ContentView.swift */; };
 		36C835462AB8B61A00BE01FE /* XCUIElement+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C835452AB8B61A00BE01FE /* XCUIElement+Extensions.swift */; };
+		36C8354B2AB8BB1100BE01FE /* MainViewViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C8354A2AB8BB1100BE01FE /* MainViewViewModelTests.swift */; };
+		36C8354D2AB8BB3E00BE01FE /* CoreDataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C8354C2AB8BB3E00BE01FE /* CoreDataManagerProtocol.swift */; };
+		36C835502AB8BDDB00BE01FE /* CoreDataManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C8354F2AB8BDDB00BE01FE /* CoreDataManagerMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,12 +62,9 @@
 		36AAC8262A57084700B21350 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36AAC8292A57084700B21350 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		36AAC82F2A57084700B21350 /* MacOSAssignmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacOSAssignmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		36AAC8332A57084700B21350 /* MacOSAssignmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacOSAssignmentTests.swift; sourceTree = "<group>"; };
 		36AAC8392A57084700B21350 /* MacOSAssignmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacOSAssignmentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		36AAC83D2A57084700B21350 /* MacOSAssignmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacOSAssignmentUITests.swift; sourceTree = "<group>"; };
-		36AAC83F2A57084700B21350 /* MacOSAssignmentUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacOSAssignmentUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		36AAC84E2A5708BF00B21350 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		36AAC85F2A5709A000B21350 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		36AAC85F2A5709A000B21350 /* CoreDataManagerImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerImplementation.swift; sourceTree = "<group>"; };
 		36AAC8622A57150100B21350 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		36AAC8652A57E9B500B21350 /* NSManagedObject+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Extensions.swift"; sourceTree = "<group>"; };
 		36AAC8672A57EE3700B21350 /* SelectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionModel.swift; sourceTree = "<group>"; };
@@ -82,6 +79,9 @@
 		36AAC8792A58467C00B21350 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		36C835452AB8B61A00BE01FE /* XCUIElement+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIElement+Extensions.swift"; sourceTree = "<group>"; };
 		36C835472AB8B83B00BE01FE /* MacOSAssignmentTestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = MacOSAssignmentTestPlan.xctestplan; sourceTree = "<group>"; };
+		36C8354A2AB8BB1100BE01FE /* MainViewViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewModelTests.swift; sourceTree = "<group>"; };
+		36C8354C2AB8BB3E00BE01FE /* CoreDataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerProtocol.swift; sourceTree = "<group>"; };
+		36C8354F2AB8BDDB00BE01FE /* CoreDataManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +152,7 @@
 		36AAC8322A57084700B21350 /* MacOSAssignmentTests */ = {
 			isa = PBXGroup;
 			children = (
-				36AAC8332A57084700B21350 /* MacOSAssignmentTests.swift */,
+				36C8354A2AB8BB1100BE01FE /* MainViewViewModelTests.swift */,
 			);
 			path = MacOSAssignmentTests;
 			sourceTree = "<group>";
@@ -162,8 +162,6 @@
 			children = (
 				36C835442AB8B5F600BE01FE /* Extensions */,
 				36993EEB2A5E9A5C002DF7EB /* AddBookPopoverViewTests.swift */,
-				36AAC83D2A57084700B21350 /* MacOSAssignmentUITests.swift */,
-				36AAC83F2A57084700B21350 /* MacOSAssignmentUITestsLaunchTests.swift */,
 			);
 			path = MacOSAssignmentUITests;
 			sourceTree = "<group>";
@@ -203,7 +201,7 @@
 		36AAC85B2A57096500B21350 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				36AAC85F2A5709A000B21350 /* CoreDataManager.swift */,
+				36C8354E2AB8BDB700BE01FE /* CoreDataManager */,
 				36AAC8612A57150100B21350 /* DataModel.xcdatamodeld */,
 			);
 			path = Data;
@@ -252,6 +250,16 @@
 				36C835452AB8B61A00BE01FE /* XCUIElement+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		36C8354E2AB8BDB700BE01FE /* CoreDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				36C8354C2AB8BB3E00BE01FE /* CoreDataManagerProtocol.swift */,
+				36AAC85F2A5709A000B21350 /* CoreDataManagerImplementation.swift */,
+				36C8354F2AB8BDDB00BE01FE /* CoreDataManagerMock.swift */,
+			);
+			path = CoreDataManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,6 +421,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36AAC86A2A57F39600B21350 /* MainViewViewModel.swift in Sources */,
+				36C8354D2AB8BB3E00BE01FE /* CoreDataManagerProtocol.swift in Sources */,
 				36AAC87A2A58467C00B21350 /* DetailedViewViewModel.swift in Sources */,
 				36AAC86F2A57F64200B21350 /* AddBookPopover.swift in Sources */,
 				36AAC8662A57E9B500B21350 /* NSManagedObject+Extensions.swift in Sources */,
@@ -421,11 +430,12 @@
 				36AAC87B2A58467C00B21350 /* DetailedView.swift in Sources */,
 				36AAC8682A57EE3700B21350 /* SelectionModel.swift in Sources */,
 				36AAC8712A57F68E00B21350 /* String+Extensions.swift in Sources */,
+				36C835502AB8BDDB00BE01FE /* CoreDataManagerMock.swift in Sources */,
 				36AAC87C2A58467C00B21350 /* ContentViewViewModel.swift in Sources */,
 				36AAC86D2A57F62900B21350 /* AddBookPopoverViewModel.swift in Sources */,
 				361594122A5EE08A00610BEA /* AccessabilityEnums.swift in Sources */,
 				36AAC87D2A58467C00B21350 /* ContentView.swift in Sources */,
-				36AAC8602A5709A000B21350 /* CoreDataManager.swift in Sources */,
+				36AAC8602A5709A000B21350 /* CoreDataManagerImplementation.swift in Sources */,
 				36AAC8632A57150100B21350 /* DataModel.xcdatamodeld in Sources */,
 				36AAC8232A57084500B21350 /* MacOSAssignmentApp.swift in Sources */,
 			);
@@ -435,7 +445,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36AAC8342A57084700B21350 /* MacOSAssignmentTests.swift in Sources */,
+				36C8354B2AB8BB1100BE01FE /* MainViewViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,9 +458,7 @@
 				36C835462AB8B61A00BE01FE /* XCUIElement+Extensions.swift in Sources */,
 				36993EF22A5E9B8A002DF7EB /* AddBookPopoverViewModel.swift in Sources */,
 				361594132A5EE0CA00610BEA /* AccessabilityEnums.swift in Sources */,
-				36AAC83E2A57084700B21350 /* MacOSAssignmentUITests.swift in Sources */,
 				36993EEC2A5E9A5C002DF7EB /* AddBookPopoverViewTests.swift in Sources */,
-				36AAC8402A57084700B21350 /* MacOSAssignmentUITestsLaunchTests.swift in Sources */,
 				36993EF42A5E9BA4002DF7EB /* Sizes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

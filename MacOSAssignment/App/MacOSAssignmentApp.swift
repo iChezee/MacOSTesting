@@ -2,7 +2,7 @@ import SwiftUI
 
 @main
 struct MacOSAssignmentApp: App {
-    let context = CoreDataManager.shared.mainContext
+    let context = CoreDataManagerImplementation.shared.mainContext
     @ObservedObject var selectionModel = SelectionModel.shared
     
     init() {

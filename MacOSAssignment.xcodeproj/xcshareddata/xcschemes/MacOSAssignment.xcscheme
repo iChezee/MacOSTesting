@@ -28,9 +28,9 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "36AAC8382A57084700B21350"
-               BuildableName = "MacOSAssignmentUITests.xctest"
-               BlueprintName = "MacOSAssignmentUITests"
+               BlueprintIdentifier = "36AAC82E2A57084700B21350"
+               BuildableName = "MacOSAssignmentTests.xctest"
+               BlueprintName = "MacOSAssignmentTests"
                ReferencedContainer = "container:MacOSAssignment.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,9 +42,9 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "36AAC82E2A57084700B21350"
-               BuildableName = "MacOSAssignmentTests.xctest"
-               BlueprintName = "MacOSAssignmentTests"
+               BlueprintIdentifier = "36AAC8382A57084700B21350"
+               BuildableName = "MacOSAssignmentUITests.xctest"
+               BlueprintName = "MacOSAssignmentUITests"
                ReferencedContainer = "container:MacOSAssignment.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

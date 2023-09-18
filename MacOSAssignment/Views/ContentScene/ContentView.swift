@@ -22,7 +22,7 @@ struct ContentView: View {
                 NavigationLink {
                     if selectionModel.selectedAuthor != nil {
                         DetailedView()
-                            .environment(\.managedObjectContext, CoreDataManager.shared.mainContext)
+                            .environment(\.managedObjectContext, viewModel.coreDataManager.mainContext)
                     }
                 } label: {
                     Text(model.name ?? "")

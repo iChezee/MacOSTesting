@@ -1,8 +1,8 @@
 import CoreData
 import Foundation
 
-class CoreDataManager {
-    static let shared = CoreDataManager()
+class CoreDataManagerImplementation: CoreDataManager {
+    static let shared = CoreDataManagerImplementation()
 
     lazy var mainContext: NSManagedObjectContext = {
         persistentContainer.viewContext
@@ -24,7 +24,7 @@ class CoreDataManager {
     }()
     
     @discardableResult
-    func addItem<T>(type: T.Type, name: String, parameters: [String: Any]) async throws -> Result<T, Error> where T: NSManagedObject {
+    func addItem<Object>(type: Object.Type, name: String, parameters: [String: Any]) async throws -> Result<Object, Error> {
         return try mainContext.performAndWait {
             let entity = NSEntityDescription.insertNewObject(forEntityName: name, into: self.mainContext)
             for key in parameters.keys {
@@ -36,7 +36,7 @@ class CoreDataManager {
                 }
             }
             try self.mainContext.save()
-            return .success(entity as! T) // swiftlint:disable:this force_cast
+            return .success(entity as! Object) // swiftlint:disable:this force_cast
         }
     }
     
@@ -51,6 +51,62 @@ class CoreDataManager {
             genre.addToBooks(book)
             try self.backgroundContext.save()
         }
+    }
+    
+    func getAuthorBy(name: String) async -> Result<AuthorMO, Error> {
+        return await persistentContainer.performBackgroundTask({ context in
+            let request = AuthorMO.fetchRequest()
+            let nameField = #selector(getter: AuthorMO.name).description
+            request.predicate = NSPredicate(format: "\(nameField) == %@", name)
+            request.fetchLimit = 1
+            
+            do {
+                if let author = try context.fetch(request).first {
+                    return .success(author)
+                } else {
+                    return .failure(FetchError.nothingIsHere)
+                }
+            } catch {
+                return .failure(error)
+            }
+        })
+    }
+    
+    func getGenreBy(title: String) async -> Result<GenreMO, Error> {
+        return await persistentContainer.performBackgroundTask({ context in
+            let request = GenreMO.fetchRequest()
+            let nameField = #selector(getter: GenreMO.title).description
+            request.predicate = NSPredicate(format: "\(nameField) == %@", title)
+            request.fetchLimit = 1
+            
+            do {
+                if let genre = try context.fetch(request).first {
+                    return .success(genre)
+                } else {
+                    return .failure(FetchError.nothingIsHere)
+                }
+            } catch {
+                return .failure(error)
+            }
+        })
+    }
+    
+    func getBookBy(title: String) async -> Result<BookMO, Error> {
+        return await persistentContainer.performBackgroundTask({ context in
+            let request = BookMO.fetchRequest()
+            let titleField = #selector(getter: BookMO.title).description
+            request.predicate = NSPredicate(format: "\(titleField) == %@", title)
+            request.fetchLimit = 1
+            do {
+                if let book = try context.fetch(request).first {
+                    return .success(book)
+                } else {
+                    return .failure(FetchError.nothingIsHere)
+                }
+            } catch {
+                return .failure(error)
+            }
+        })
     }
     
     func delete(_ genre: GenreMO) throws {
@@ -132,66 +188,10 @@ class CoreDataManager {
         }
     }
     
-    func delete(_ objects: [NSManagedObject]) {
+    private func delete(_ objects: [NSManagedObject]) {
         for object in objects {
             mainContext.delete(object)
         }
-    }
-
-    func getAuthorBy(name: String) async -> Result<AuthorMO, Error> {
-        return await persistentContainer.performBackgroundTask({ context in
-            let request = AuthorMO.fetchRequest()
-            let nameField = #selector(getter: AuthorMO.name).description
-            request.predicate = NSPredicate(format: "\(nameField) == %@", name)
-            request.fetchLimit = 1
-
-            do {
-                if let author = try context.fetch(request).first {
-                    return .success(author)
-                } else {
-                    return .failure(FetchError.nothingIsHere)
-                }
-            } catch {
-                return .failure(error)
-            }
-        })
-    }
-
-    func getGenreBy(title: String) async -> Result<GenreMO, Error> {
-        return await persistentContainer.performBackgroundTask({ context in
-            let request = GenreMO.fetchRequest()
-            let nameField = #selector(getter: GenreMO.title).description
-            request.predicate = NSPredicate(format: "\(nameField) == %@", title)
-            request.fetchLimit = 1
-
-            do {
-                if let genre = try context.fetch(request).first {
-                    return .success(genre)
-                } else {
-                    return .failure(FetchError.nothingIsHere)
-                }
-            } catch {
-                return .failure(error)
-            }
-        })
-    }
-
-    func getBookBy(title: String) async -> Result<BookMO, Error> {
-        return await persistentContainer.performBackgroundTask({ context in
-            let request = BookMO.fetchRequest()
-            let titleField = #selector(getter: BookMO.title).description
-            request.predicate = NSPredicate(format: "\(titleField) == %@", title)
-            request.fetchLimit = 1
-            do {
-                if let book = try context.fetch(request).first {
-                    return .success(book)
-                } else {
-                    return .failure(FetchError.nothingIsHere)
-                }
-            } catch {
-                return .failure(error)
-            }
-        })
     }
 }
 

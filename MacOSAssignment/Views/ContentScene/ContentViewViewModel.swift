@@ -1,11 +1,15 @@
 import Foundation
 
 class ContentViewViewModel: ObservableObject {
-    let manager = CoreDataManager.shared
+    let coreDataManager: any CoreDataManager
+    
+    init(coreDataManager: any CoreDataManager = CoreDataManagerImplementation.shared) {
+        self.coreDataManager = coreDataManager
+    }
     
     func remove(_ author: AuthorMO) {
         do {
-            try manager.delete(author)
+            try coreDataManager.delete(author)
         } catch {
             print(error)
         }

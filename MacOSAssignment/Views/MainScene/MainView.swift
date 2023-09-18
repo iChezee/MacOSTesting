@@ -37,7 +37,7 @@ public struct MainView: View {
             NavigationLink(destination: {
                 if selectionModel.selectedGenre != nil {
                     ContentView()
-                        .environment(\.managedObjectContext, CoreDataManager.shared.mainContext)
+                        .environment(\.managedObjectContext, viewModel.coreDataManager.mainContext)
                 }
             }, label: {
                 Text(model.title ?? "")

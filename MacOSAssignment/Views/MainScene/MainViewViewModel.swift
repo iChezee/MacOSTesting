@@ -2,12 +2,16 @@ import Foundation
 import CoreData
 
 class MainViewViewModel: ObservableObject {
-    private var manager = CoreDataManager.shared
+    let coreDataManager: any CoreDataManager
+    
+    init(coreDataManager: any CoreDataManager = CoreDataManagerImplementation.shared) {
+        self.coreDataManager = coreDataManager
+    }
     
     func addBook(title: String, authorName: String, genreTitle: String, completion: (() -> Void)? = nil) {
         Task {
             do {
-                if case .success = await manager.getBookBy(title: title) {
+                if case .success = await coreDataManager.getBookBy(title: title) {
                     return
                 }
                 
@@ -20,8 +24,8 @@ class MainViewViewModel: ObservableObject {
                     #selector(getter: BookMO.author).description: author,
                     #selector(getter: BookMO.genre).description: genre
                 ] as [String: Any]
-                let book = try await manager.addItem(type: BookMO.self, name: entityName, parameters: parameters).get()
-                try await manager.makeRelations(book: book.objectID, author: author.objectID, genre: genre.objectID)
+                let book = try await coreDataManager.addItem(type: BookMO.self, name: entityName, parameters: parameters).get()
+                try await coreDataManager.makeRelations(book: book.objectID, author: author.objectID, genre: genre.objectID)
                 completion?()
             } catch {
                 print(error)
@@ -31,7 +35,7 @@ class MainViewViewModel: ObservableObject {
     
     func remove(_ genre: GenreMO) {
         do {
-            try manager.delete(genre)
+            try coreDataManager.delete(genre)
         } catch {
             print(error)
         }
@@ -41,7 +45,7 @@ class MainViewViewModel: ObservableObject {
 private extension MainViewViewModel {
     // Fetch author if it was created already
     func getAuthor(_ name: String) async throws -> AuthorMO {
-        let fetchedAuthorResult = await manager.getAuthorBy(name: name)
+        let fetchedAuthorResult = await coreDataManager.getAuthorBy(name: name)
         switch fetchedAuthorResult {
         case .success(let fetchedAuthor):
             return fetchedAuthor
@@ -58,12 +62,12 @@ private extension MainViewViewModel {
     func createAuthor(_ name: String) async throws -> AuthorMO {
         let entityName = AuthorMO.entityName
         let nameField = #selector(getter: AuthorMO.name).description
-        return try await manager.addItem(type: AuthorMO.self, name: entityName, parameters: [nameField: name]).get()
+        return try await coreDataManager.addItem(type: AuthorMO.self, name: entityName, parameters: [nameField: name]).get()
     }
     
     // Fetch genre if it was created already
     func getGenre(_ title: String) async throws -> GenreMO {
-        let fetchedResult = await manager.getGenreBy(title: title)
+        let fetchedResult = await coreDataManager.getGenreBy(title: title)
         switch fetchedResult {
         case .success(let genre):
             return genre
@@ -80,6 +84,6 @@ private extension MainViewViewModel {
     func createGenre(_ title: String) async throws -> GenreMO {
         let entityName = GenreMO.entityName
         let titleField = #selector(getter: GenreMO.title).description
-        return try await manager.addItem(type: GenreMO.self, name: entityName, parameters: [titleField: title]).get()
+        return try await coreDataManager.addItem(type: GenreMO.self, name: entityName, parameters: [titleField: title]).get()
     }
 }
