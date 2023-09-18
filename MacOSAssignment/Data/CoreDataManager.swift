@@ -12,6 +12,7 @@ class CoreDataManager {
         persistentContainer.newBackgroundContext()
     }()
 
+    // TODO: Make migrations
     private var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "DataModel")
         container.loadPersistentStores { _, error in

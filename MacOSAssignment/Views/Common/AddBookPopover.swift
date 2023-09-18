@@ -41,11 +41,13 @@ struct AddBookPopover: View {
     
     var topBar: some View {
         HStack {
-            Image(systemName: "xmark.circle")
-                .imageScale(.large)
-                .onTapGesture {
-                    dismiss()
-                }
+            Button {
+                dismiss()
+            } label: {
+                Image(systemName: "xmark.circle")
+                    .imageScale(.large)
+            }
+            .accessibilityIdentifier(AccLabels.AddBookPopover.closeButton)
             Spacer()
             Spacer()
         }

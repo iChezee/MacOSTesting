@@ -14,5 +14,6 @@ public enum AccLabels {
         static let authorTextField = "AuthorTextField"
         static let genreTextField = "GenreTextField"
         static let addButton = "AddBookPopover.AddButton"
+        static let closeButton = "ClosePopoverButton"
     }
 }
