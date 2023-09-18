@@ -40,7 +40,7 @@ final class AddBookPopoverViewTests: XCTestCase {
         return (app, bookTextField, authorTextField, genreTextField, addItemButton, closeButton)
     }
 
-    func test_addingData_when_invalid() {
+    func test_popoverStayOpened_when_addingDataIsInvalid() {
         let (app, bookTextField, authorTextField, genreTextField, addItemButton, closeButton) = openPopover
         
         let bookName = "asdf"
@@ -76,7 +76,7 @@ final class AddBookPopoverViewTests: XCTestCase {
         XCTAssertTrue(closeButton.exists)
     }
     
-    func test_addingData_when_valid() {
+    func test_closePopover_when_addingDataIsValid() {
         let (app, bookTextField, authorTextField, genreTextField, addItemButton, closeButton) = openPopover
         
         let bookName = "asdf"
@@ -112,7 +112,7 @@ final class AddBookPopoverViewTests: XCTestCase {
         XCTAssertFalse(closeButton.exists)
     }
     
-    func test_addingData_when_closeTapped() {
+    func test_closePopoverSuccess_when_closeTapped() {
         let (_, bookTextField, authorTextField, genreTextField, addItemButton, closeButton) = openPopover
         
         closeButton.tap()
