@@ -38,7 +38,18 @@ class PersistenceControllerImpl: PersistenceController {
             return .success(entity)
         }
     }
+    
+    func getObject(by id: NSManagedObjectID, context: NSManagedObjectContext) -> NSManagedObject {
+        context.object(with: id)
+    }
+    
+    func getObject(by value: Any, key: String, entity: ObjectType.Type, context: NSManagedObjectContext) throws -> ObjectType? {
+        let request = NSFetchRequest<ObjectType>(entityName: ObjectType.entityName)
+        request.predicate = NSPredicate(format: "%K == %@", key, value as! CVarArg)
+        request.fetchLimit = 1
         
+        return try context.fetch(request).first
+    }
     
     func delete(object: NSManagedObject) throws {
         viewContext.delete(object)

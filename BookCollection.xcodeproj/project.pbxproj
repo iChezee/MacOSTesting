@@ -13,12 +13,12 @@
 		360D1CCA2ABB5CEB00623F57 /* iOSMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360D1CC92ABB5CEB00623F57 /* iOSMainView.swift */; };
 		360D1CCC2ABB5CEC00623F57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 360D1CCB2ABB5CEC00623F57 /* Assets.xcassets */; };
 		360D1CD02ABB5CEC00623F57 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 360D1CCF2ABB5CEC00623F57 /* Preview Assets.xcassets */; };
-		360D1CDA2ABB5CED00623F57 /* BookCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360D1CD92ABB5CED00623F57 /* BookCollectionTests.swift */; };
 		360D1CE42ABB5CED00623F57 /* BookCollectionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360D1CE32ABB5CED00623F57 /* BookCollectionUITests.swift */; };
 		360D1CE62ABB5CED00623F57 /* BookCollectionUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360D1CE52ABB5CED00623F57 /* BookCollectionUITestsLaunchTests.swift */; };
 		360D1CF72ABB5E3500623F57 /* MainViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360D1CF62ABB5E3500623F57 /* MainViewViewModel.swift */; };
 		360D1CFA2ABB5EC100623F57 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360D1CF92ABB5EC100623F57 /* PersistenceController.swift */; };
 		360D1D002ABB650600623F57 /* MacMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360D1CFF2ABB650600623F57 /* MacMainView.swift */; };
+		3645486F2AC30FB1008125EA /* PersistenceControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3645486E2AC30FB1008125EA /* PersistenceControllerTests.swift */; };
 		366504922ABB68B100B5FCDE /* Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366504912ABB68B000B5FCDE /* Sizes.swift */; };
 		366504962ABB68BD00B5FCDE /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366504942ABB68BD00B5FCDE /* String+Extensions.swift */; };
 		366504972ABB68BD00B5FCDE /* NSManagedObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366504952ABB68BD00B5FCDE /* NSManagedObject+Extensions.swift */; };
@@ -54,13 +54,13 @@
 		360D1CCD2ABB5CEC00623F57 /* BookCollection.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BookCollection.entitlements; sourceTree = "<group>"; };
 		360D1CCF2ABB5CEC00623F57 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		360D1CD52ABB5CED00623F57 /* BookCollectionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookCollectionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		360D1CD92ABB5CED00623F57 /* BookCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionTests.swift; sourceTree = "<group>"; };
 		360D1CDF2ABB5CED00623F57 /* BookCollectionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookCollectionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		360D1CE32ABB5CED00623F57 /* BookCollectionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionUITests.swift; sourceTree = "<group>"; };
 		360D1CE52ABB5CED00623F57 /* BookCollectionUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		360D1CF62ABB5E3500623F57 /* MainViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewModel.swift; sourceTree = "<group>"; };
 		360D1CF92ABB5EC100623F57 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		360D1CFF2ABB650600623F57 /* MacMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacMainView.swift; sourceTree = "<group>"; };
+		3645486E2AC30FB1008125EA /* PersistenceControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceControllerTests.swift; sourceTree = "<group>"; };
 		366504912ABB68B000B5FCDE /* Sizes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sizes.swift; sourceTree = "<group>"; };
 		366504942ABB68BD00B5FCDE /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		366504952ABB68BD00B5FCDE /* NSManagedObject+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Extensions.swift"; sourceTree = "<group>"; };
@@ -138,7 +138,7 @@
 		360D1CD82ABB5CED00623F57 /* BookCollectionTests */ = {
 			isa = PBXGroup;
 			children = (
-				360D1CD92ABB5CED00623F57 /* BookCollectionTests.swift */,
+				3645486E2AC30FB1008125EA /* PersistenceControllerTests.swift */,
 			);
 			path = BookCollectionTests;
 			sourceTree = "<group>";
@@ -397,7 +397,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				360D1CDA2ABB5CED00623F57 /* BookCollectionTests.swift in Sources */,
+				3645486F2AC30FB1008125EA /* PersistenceControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +479,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -533,6 +534,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -568,7 +570,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.illiahorevoi.BookCollection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -608,7 +610,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.illiahorevoi.BookCollection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -631,7 +633,7 @@
 				DEVELOPMENT_TEAM = 4DGEQ6753N;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.illiahorevoi.BookCollectionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -655,7 +657,7 @@
 				DEVELOPMENT_TEAM = 4DGEQ6753N;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.illiahorevoi.BookCollectionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -678,7 +680,7 @@
 				DEVELOPMENT_TEAM = 4DGEQ6753N;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.illiahorevoi.BookCollectionUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -701,7 +703,7 @@
 				DEVELOPMENT_TEAM = 4DGEQ6753N;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.illiahorevoi.BookCollectionUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
