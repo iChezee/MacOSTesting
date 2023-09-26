@@ -1,7 +1,6 @@
 import CoreData
 
 class PersistenceControllerImpl: PersistenceController {
-    typealias ObjectType = NSManagedObject
     static let shared = PersistenceControllerImpl()
     
     var viewContext: NSManagedObjectContext { container.viewContext }
@@ -22,7 +21,7 @@ class PersistenceControllerImpl: PersistenceController {
     }
     
     @discardableResult
-    func addItem(_ objectType: ObjectType.Type, parameters: [String: Any]) async throws -> Result<ObjectType, Error> {
+    func addItem<T>(_ objectType: T.Type, parameters: [String: Any]) async throws -> Result<T, Error> {
         return try await container.performBackgroundTask { context in
             let entityName = String(describing: objectType.self)
             let entity = NSEntityDescription.insertNewObject(forEntityName: entityName, into: context)
@@ -35,20 +34,24 @@ class PersistenceControllerImpl: PersistenceController {
                 }
             }
             try context.save()
-            return .success(entity)
+            return .success(entity as! T)
         }
     }
     
-    func getObject(by id: NSManagedObjectID, context: NSManagedObjectContext) -> NSManagedObject {
-        context.object(with: id)
+    func getObject<T>(by id: NSManagedObjectID, context: NSManagedObjectContext) -> T where T: NSManagedObject {
+        context.object(with: id) as! T
     }
     
-    func getObject(by value: Any, key: String, entity: ObjectType.Type, context: NSManagedObjectContext) throws -> ObjectType? {
-        let request = NSFetchRequest<ObjectType>(entityName: entity.entityName)
+    func getObject<T>(by value: Any, key: String, entity: T.Type, context: NSManagedObjectContext) throws -> T? {
+        guard let ObjectType = T.self as? NSManagedObject.Type else {
+            return nil
+        }
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: ObjectType.entityName)
         request.predicate = NSPredicate(format: "%K == %@", key, value as! CVarArg)
         request.fetchLimit = 1
         
-        return try context.fetch(request).first
+        return try context.fetch(request).first as? T
     }
     
     func delete(object: NSManagedObject) throws {

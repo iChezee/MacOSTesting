@@ -1,4 +1,5 @@
 import XCTest
+import CoreData
 @testable import BookCollection
 
 class PersistenceControllerTests: XCTestCase {
@@ -13,10 +14,7 @@ class PersistenceControllerTests: XCTestCase {
     func testAddItem() async throws {
         let persistenceController = persistenceController
         do {
-            guard let object = try await persistenceController.addItem(Book.self, parameters: parameters).get() as? Book else {
-                XCTFail("Wrong object")
-                return
-            }
+            let object = try await persistenceController.addItem(Book.self, parameters: parameters).get()
             let context = object.managedObjectContext
             guard let contextualObject = context?.object(with: object.objectID) as? Book else {
                 return
@@ -30,21 +28,27 @@ class PersistenceControllerTests: XCTestCase {
         }
     }
     
-    func testSuccessGetObject_When_SearchByKeyValue() throws {
+    func testSuccessGetObject_When_Search() throws {
         let persistenceController = persistenceController
         let context = persistenceController.viewContext
         guard let firstObject = prepopulatedObjects(at: context).first else {
             XCTFail("Failed to prepopulate objects")
             return
         }
-        
+        let searchedByIdObject = persistenceController.getObject(by: firstObject.objectID, context: context) as? Book
+        XCTAssertEqual(firstObject, searchedByIdObject)
+        XCTAssertEqual(firstObject.title, searchedByIdObject?.title)
         do {
-            let searchedObject = try persistenceController.getObject(by: firstObject.title ?? "",
-                                                                     key: String(describing: #keyPath(Book.title)),
-                                                                     entity: Book.self,
-                                                                     context: context) as? Book
-            XCTAssertEqual(firstObject, searchedObject)
-            XCTAssertEqual(firstObject.title, searchedObject?.title)
+            guard let searcheByKeyValueObject = try persistenceController.getObject<Book>(by: firstObject.title ?? "",
+                                                                                          key: String(describing: #keyPath(Book.title)),
+                                                                                          entity: Book.self,
+                                                                                          context: context) else {
+                XCTFail("There is no object")
+                return
+            }
+            
+            XCTAssertEqual(firstObject, searcheByKeyValueObject)
+            XCTAssertEqual(firstObject.title, searcheByKeyValueObject.title)
         } catch {
             XCTFail("Failed to search object: \(error)")
         }
@@ -52,10 +56,7 @@ class PersistenceControllerTests: XCTestCase {
     
     func testDeleteObject() async throws {
         let persistenceController = persistenceController
-        guard let object = try await persistenceController.addItem(Book.self, parameters: parameters).get() as? Book else {
-            XCTFail("Wrong object")
-            return
-        }
+        let object = try await persistenceController.addItem(Book.self, parameters: parameters).get()
         let context = object.managedObjectContext
         guard let contextualObject = context?.object(with: object.objectID) as? Book else {
             return

@@ -16,7 +16,9 @@ struct iOSMainView: View {
             }
             .toolbar {
                 Button {
-                    viewModel.requestNewBook()
+                    Task {
+                        await viewModel.add("Some name")
+                    }
                 } label: {
                     Image(systemName: "plus")
                 }

@@ -1,20 +1,20 @@
 import Foundation
 
 class MainViewViewModel {
+    let persistenceController: PersistenceController
     let viewContext = PersistenceControllerImpl.shared.viewContext
     
-    func requestNewBook() {
-        Request.makeRequest()
+    init(persistenceController: any PersistenceController = PersistenceControllerImpl.shared) {
+        self.persistenceController = persistenceController
     }
     
-    func add(_ name: String) {
-        let newItem = Author(context: viewContext)
-        newItem.name = name
+    @MainActor
+    func add(_ name: String) async {
+        let parameters = ["name": name]
         do {
-            try viewContext.save()
+            try await persistenceController.addItem(Author.self, parameters: parameters)
         } catch {
-            let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            
         }
     }
 }
