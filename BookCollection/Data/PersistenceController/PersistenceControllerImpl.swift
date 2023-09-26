@@ -44,7 +44,7 @@ class PersistenceControllerImpl: PersistenceController {
     }
     
     func getObject(by value: Any, key: String, entity: ObjectType.Type, context: NSManagedObjectContext) throws -> ObjectType? {
-        let request = NSFetchRequest<ObjectType>(entityName: ObjectType.entityName)
+        let request = NSFetchRequest<ObjectType>(entityName: entity.entityName)
         request.predicate = NSPredicate(format: "%K == %@", key, value as! CVarArg)
         request.fetchLimit = 1
         

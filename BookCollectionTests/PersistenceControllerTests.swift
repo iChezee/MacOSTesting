@@ -30,6 +30,26 @@ class PersistenceControllerTests: XCTestCase {
         }
     }
     
+    func testSuccessGetObject_When_SearchByKeyValue() throws {
+        let persistenceController = persistenceController
+        let context = persistenceController.viewContext
+        guard let firstObject = prepopulatedObjects(at: context).first else {
+            XCTFail("Failed to prepopulate objects")
+            return
+        }
+        
+        do {
+            let searchedObject = try persistenceController.getObject(by: firstObject.title ?? "",
+                                                                     key: String(describing: #keyPath(Book.title)),
+                                                                     entity: Book.self,
+                                                                     context: context) as? Book
+            XCTAssertEqual(firstObject, searchedObject)
+            XCTAssertEqual(firstObject.title, searchedObject?.title)
+        } catch {
+            XCTFail("Failed to search object: \(error)")
+        }
+    }
+    
     func testDeleteObject() async throws {
         let persistenceController = persistenceController
         guard let object = try await persistenceController.addItem(Book.self, parameters: parameters).get() as? Book else {
