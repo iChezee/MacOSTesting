@@ -19,8 +19,6 @@
 		360D1CF72ABB5E3500623F57 /* MainViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360D1CF62ABB5E3500623F57 /* MainViewViewModel.swift */; };
 		360D1CFA2ABB5EC100623F57 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360D1CF92ABB5EC100623F57 /* PersistenceController.swift */; };
 		360D1D002ABB650600623F57 /* MacMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360D1CFF2ABB650600623F57 /* MacMainView.swift */; };
-		3665048E2ABB688100B5FCDE /* AddBookPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3665048C2ABB688000B5FCDE /* AddBookPopover.swift */; };
-		3665048F2ABB688100B5FCDE /* AddBookPopoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3665048D2ABB688100B5FCDE /* AddBookPopoverViewModel.swift */; };
 		366504922ABB68B100B5FCDE /* Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366504912ABB68B000B5FCDE /* Sizes.swift */; };
 		366504962ABB68BD00B5FCDE /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366504942ABB68BD00B5FCDE /* String+Extensions.swift */; };
 		366504972ABB68BD00B5FCDE /* NSManagedObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366504952ABB68BD00B5FCDE /* NSManagedObject+Extensions.swift */; };
@@ -63,8 +61,6 @@
 		360D1CF62ABB5E3500623F57 /* MainViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewModel.swift; sourceTree = "<group>"; };
 		360D1CF92ABB5EC100623F57 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		360D1CFF2ABB650600623F57 /* MacMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacMainView.swift; sourceTree = "<group>"; };
-		3665048C2ABB688000B5FCDE /* AddBookPopover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookPopover.swift; sourceTree = "<group>"; };
-		3665048D2ABB688100B5FCDE /* AddBookPopoverViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookPopoverViewModel.swift; sourceTree = "<group>"; };
 		366504912ABB68B000B5FCDE /* Sizes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sizes.swift; sourceTree = "<group>"; };
 		366504942ABB68BD00B5FCDE /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		366504952ABB68BD00B5FCDE /* NSManagedObject+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Extensions.swift"; sourceTree = "<group>"; };
@@ -214,7 +210,6 @@
 		360D1CFC2ABB64E700623F57 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				3665048B2ABB685C00B5FCDE /* AddBookPopover */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -233,15 +228,6 @@
 				360D1CFF2ABB650600623F57 /* MacMainView.swift */,
 			);
 			path = macOS;
-			sourceTree = "<group>";
-		};
-		3665048B2ABB685C00B5FCDE /* AddBookPopover */ = {
-			isa = PBXGroup;
-			children = (
-				3665048C2ABB688000B5FCDE /* AddBookPopover.swift */,
-				3665048D2ABB688100B5FCDE /* AddBookPopoverViewModel.swift */,
-			);
-			path = AddBookPopover;
 			sourceTree = "<group>";
 		};
 		366504902ABB689F00B5FCDE /* Misc */ = {
@@ -398,12 +384,10 @@
 				360D1D002ABB650600623F57 /* MacMainView.swift in Sources */,
 				360D1CC52ABB5CEB00623F57 /* PersistenceControllerImpl.swift in Sources */,
 				360D1CCA2ABB5CEB00623F57 /* iOSMainView.swift in Sources */,
-				3665048F2ABB688100B5FCDE /* AddBookPopoverViewModel.swift in Sources */,
 				360D1CFA2ABB5EC100623F57 /* PersistenceController.swift in Sources */,
 				366504922ABB68B100B5FCDE /* Sizes.swift in Sources */,
 				360D1CF72ABB5E3500623F57 /* MainViewViewModel.swift in Sources */,
 				366504992ABB68CD00B5FCDE /* AccessabilityEnums.swift in Sources */,
-				3665048E2ABB688100B5FCDE /* AddBookPopover.swift in Sources */,
 				366504972ABB68BD00B5FCDE /* NSManagedObject+Extensions.swift in Sources */,
 				360D1CC82ABB5CEB00623F57 /* BookCollection.xcdatamodeld in Sources */,
 			);
