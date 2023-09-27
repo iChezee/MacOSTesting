@@ -1,8 +1,13 @@
 import SwiftUI
+import DataManagment
 
 @main
 struct BookCollectionApp: App {
-    let persistenceController = PersistenceControllerImpl.shared
+    let persistenceController: PersistenceController
+    
+    init() {
+        persistenceController = DataManagment(modelName: "BookCollection").wrappedValue
+    }
 
     var body: some Scene {
         WindowGroup {

@@ -1,10 +1,10 @@
 import Foundation
+import DataManagment
 
 class MainViewViewModel {
     let persistenceController: PersistenceController
-    let viewContext = PersistenceControllerImpl.shared.viewContext
     
-    init(persistenceController: any PersistenceController = PersistenceControllerImpl.shared) {
+    init(persistenceController: PersistenceController) {
         self.persistenceController = persistenceController
     }
     

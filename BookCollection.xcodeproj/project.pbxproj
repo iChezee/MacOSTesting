@@ -8,23 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		360D1CC32ABB5CEA00623F57 /* BookCollectionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360D1CC22ABB5CEA00623F57 /* BookCollectionApp.swift */; };
-		360D1CC52ABB5CEB00623F57 /* PersistenceControllerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360D1CC42ABB5CEB00623F57 /* PersistenceControllerImpl.swift */; };
-		360D1CC82ABB5CEB00623F57 /* BookCollection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 360D1CC62ABB5CEB00623F57 /* BookCollection.xcdatamodeld */; };
 		360D1CCA2ABB5CEB00623F57 /* iOSMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360D1CC92ABB5CEB00623F57 /* iOSMainView.swift */; };
 		360D1CCC2ABB5CEC00623F57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 360D1CCB2ABB5CEC00623F57 /* Assets.xcassets */; };
 		360D1CD02ABB5CEC00623F57 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 360D1CCF2ABB5CEC00623F57 /* Preview Assets.xcassets */; };
 		360D1CE42ABB5CED00623F57 /* BookCollectionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360D1CE32ABB5CED00623F57 /* BookCollectionUITests.swift */; };
 		360D1CE62ABB5CED00623F57 /* BookCollectionUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360D1CE52ABB5CED00623F57 /* BookCollectionUITestsLaunchTests.swift */; };
 		360D1CF72ABB5E3500623F57 /* MainViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360D1CF62ABB5E3500623F57 /* MainViewViewModel.swift */; };
-		360D1CFA2ABB5EC100623F57 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360D1CF92ABB5EC100623F57 /* PersistenceController.swift */; };
 		360D1D002ABB650600623F57 /* MacMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360D1CFF2ABB650600623F57 /* MacMainView.swift */; };
-		3645486F2AC30FB1008125EA /* PersistenceControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3645486E2AC30FB1008125EA /* PersistenceControllerTests.swift */; };
 		366504922ABB68B100B5FCDE /* Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366504912ABB68B000B5FCDE /* Sizes.swift */; };
-		366504962ABB68BD00B5FCDE /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366504942ABB68BD00B5FCDE /* String+Extensions.swift */; };
-		366504972ABB68BD00B5FCDE /* NSManagedObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366504952ABB68BD00B5FCDE /* NSManagedObject+Extensions.swift */; };
 		366504992ABB68CD00B5FCDE /* AccessabilityEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366504982ABB68CD00B5FCDE /* AccessabilityEnums.swift */; };
 		3665049A2ABB68CD00B5FCDE /* AccessabilityEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366504982ABB68CD00B5FCDE /* AccessabilityEnums.swift */; };
-		3665049C2ABB6B3900B5FCDE /* NetworkingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3665049B2ABB6B3900B5FCDE /* NetworkingRequest.swift */; };
+		369A16BF2AC48FEA0036A334 /* BookCollection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 369A16BD2AC48FEA0036A334 /* BookCollection.xcdatamodeld */; };
+		369A16C32AC496500036A334 /* DataManagment in Frameworks */ = {isa = PBXBuildFile; productRef = 369A16C22AC496500036A334 /* DataManagment */; };
+		369A16C52AC49C480036A334 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369A16C42AC49C480036A334 /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +43,6 @@
 /* Begin PBXFileReference section */
 		360D1CBF2ABB5CEA00623F57 /* BookCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		360D1CC22ABB5CEA00623F57 /* BookCollectionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionApp.swift; sourceTree = "<group>"; };
-		360D1CC42ABB5CEB00623F57 /* PersistenceControllerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceControllerImpl.swift; sourceTree = "<group>"; };
-		360D1CC72ABB5CEB00623F57 /* BookCollection.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookCollection.xcdatamodel; sourceTree = "<group>"; };
 		360D1CC92ABB5CEB00623F57 /* iOSMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSMainView.swift; sourceTree = "<group>"; };
 		360D1CCB2ABB5CEC00623F57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		360D1CCD2ABB5CEC00623F57 /* BookCollection.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BookCollection.entitlements; sourceTree = "<group>"; };
@@ -58,14 +52,11 @@
 		360D1CE32ABB5CED00623F57 /* BookCollectionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionUITests.swift; sourceTree = "<group>"; };
 		360D1CE52ABB5CED00623F57 /* BookCollectionUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		360D1CF62ABB5E3500623F57 /* MainViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewModel.swift; sourceTree = "<group>"; };
-		360D1CF92ABB5EC100623F57 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		360D1CFF2ABB650600623F57 /* MacMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacMainView.swift; sourceTree = "<group>"; };
-		3645486E2AC30FB1008125EA /* PersistenceControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceControllerTests.swift; sourceTree = "<group>"; };
 		366504912ABB68B000B5FCDE /* Sizes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sizes.swift; sourceTree = "<group>"; };
-		366504942ABB68BD00B5FCDE /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
-		366504952ABB68BD00B5FCDE /* NSManagedObject+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Extensions.swift"; sourceTree = "<group>"; };
 		366504982ABB68CD00B5FCDE /* AccessabilityEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessabilityEnums.swift; sourceTree = "<group>"; };
-		3665049B2ABB6B3900B5FCDE /* NetworkingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingRequest.swift; sourceTree = "<group>"; };
+		369A16BE2AC48FEA0036A334 /* BookCollection.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookCollection.xcdatamodel; sourceTree = "<group>"; };
+		369A16C42AC49C480036A334 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				369A16C32AC496500036A334 /* DataManagment in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +92,7 @@
 				360D1CD82ABB5CED00623F57 /* BookCollectionTests */,
 				360D1CE22ABB5CED00623F57 /* BookCollectionUITests */,
 				360D1CC02ABB5CEA00623F57 /* Products */,
+				369A16BA2AC48EB70036A334 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,12 +110,11 @@
 			isa = PBXGroup;
 			children = (
 				360D1CCD2ABB5CEC00623F57 /* BookCollection.entitlements */,
+				360D1CF32ABB5D4600623F57 /* App */,
 				366504932ABB68B400B5FCDE /* Extensions */,
 				366504902ABB689F00B5FCDE /* Misc */,
 				360D1CFB2ABB649C00623F57 /* Networking */,
 				360D1CF42ABB5DC400623F57 /* View */,
-				360D1CF32ABB5D4600623F57 /* App */,
-				360D1CF22ABB5D3900623F57 /* Data */,
 			);
 			path = BookCollection;
 			sourceTree = "<group>";
@@ -138,7 +130,6 @@
 		360D1CD82ABB5CED00623F57 /* BookCollectionTests */ = {
 			isa = PBXGroup;
 			children = (
-				3645486E2AC30FB1008125EA /* PersistenceControllerTests.swift */,
 			);
 			path = BookCollectionTests;
 			sourceTree = "<group>";
@@ -152,19 +143,11 @@
 			path = BookCollectionUITests;
 			sourceTree = "<group>";
 		};
-		360D1CF22ABB5D3900623F57 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				360D1CF82ABB5E9200623F57 /* PersistenceController */,
-				360D1CC62ABB5CEB00623F57 /* BookCollection.xcdatamodeld */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
 		360D1CF32ABB5D4600623F57 /* App */ = {
 			isa = PBXGroup;
 			children = (
 				360D1CCE2ABB5CEC00623F57 /* Preview Content */,
+				369A16BD2AC48FEA0036A334 /* BookCollection.xcdatamodeld */,
 				360D1CCB2ABB5CEC00623F57 /* Assets.xcassets */,
 				360D1CC22ABB5CEA00623F57 /* BookCollectionApp.swift */,
 			);
@@ -190,19 +173,9 @@
 			path = MainView;
 			sourceTree = "<group>";
 		};
-		360D1CF82ABB5E9200623F57 /* PersistenceController */ = {
-			isa = PBXGroup;
-			children = (
-				360D1CC42ABB5CEB00623F57 /* PersistenceControllerImpl.swift */,
-				360D1CF92ABB5EC100623F57 /* PersistenceController.swift */,
-			);
-			path = PersistenceController;
-			sourceTree = "<group>";
-		};
 		360D1CFB2ABB649C00623F57 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				3665049B2ABB6B3900B5FCDE /* NetworkingRequest.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -242,10 +215,16 @@
 		366504932ABB68B400B5FCDE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				366504952ABB68BD00B5FCDE /* NSManagedObject+Extensions.swift */,
-				366504942ABB68BD00B5FCDE /* String+Extensions.swift */,
+				369A16C42AC49C480036A334 /* String+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		369A16BA2AC48EB70036A334 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +243,9 @@
 			dependencies = (
 			);
 			name = BookCollection;
+			packageProductDependencies = (
+				369A16C22AC496500036A334 /* DataManagment */,
+			);
 			productName = BookCollection;
 			productReference = 360D1CBF2ABB5CEA00623F57 /* BookCollection.app */;
 			productType = "com.apple.product-type.application";
@@ -379,17 +361,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				360D1CC32ABB5CEA00623F57 /* BookCollectionApp.swift in Sources */,
-				3665049C2ABB6B3900B5FCDE /* NetworkingRequest.swift in Sources */,
-				366504962ABB68BD00B5FCDE /* String+Extensions.swift in Sources */,
+				369A16BF2AC48FEA0036A334 /* BookCollection.xcdatamodeld in Sources */,
 				360D1D002ABB650600623F57 /* MacMainView.swift in Sources */,
-				360D1CC52ABB5CEB00623F57 /* PersistenceControllerImpl.swift in Sources */,
 				360D1CCA2ABB5CEB00623F57 /* iOSMainView.swift in Sources */,
-				360D1CFA2ABB5EC100623F57 /* PersistenceController.swift in Sources */,
+				369A16C52AC49C480036A334 /* String+Extensions.swift in Sources */,
 				366504922ABB68B100B5FCDE /* Sizes.swift in Sources */,
 				360D1CF72ABB5E3500623F57 /* MainViewViewModel.swift in Sources */,
 				366504992ABB68CD00B5FCDE /* AccessabilityEnums.swift in Sources */,
-				366504972ABB68BD00B5FCDE /* NSManagedObject+Extensions.swift in Sources */,
-				360D1CC82ABB5CEB00623F57 /* BookCollection.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,7 +375,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3645486F2AC30FB1008125EA /* PersistenceControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -757,13 +734,20 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCSwiftPackageProductDependency section */
+		369A16C22AC496500036A334 /* DataManagment */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DataManagment;
+		};
+/* End XCSwiftPackageProductDependency section */
+
 /* Begin XCVersionGroup section */
-		360D1CC62ABB5CEB00623F57 /* BookCollection.xcdatamodeld */ = {
+		369A16BD2AC48FEA0036A334 /* BookCollection.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				360D1CC72ABB5CEB00623F57 /* BookCollection.xcdatamodel */,
+				369A16BE2AC48FEA0036A334 /* BookCollection.xcdatamodel */,
 			);
-			currentVersion = 360D1CC72ABB5CEB00623F57 /* BookCollection.xcdatamodel */;
+			currentVersion = 369A16BE2AC48FEA0036A334 /* BookCollection.xcdatamodel */;
 			path = BookCollection.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
