@@ -6,8 +6,15 @@ final class AuthorsListViewModelTests: XCTestCase {
         AuthorsListViewModel()
     }
     
-    func testExample() async throws {
+    func testSuccess_When_AddAuthor() async {
         let viewModel = viewModel
-        await viewModel.add("Hello")
+        let success = await viewModel.add("Hello")
+        XCTAssertTrue(success)
+    }
+    
+    func testFailed_When_AddAuthor() async {
+        let viewModel = viewModel
+        let success = await viewModel.add("@")
+        XCTAssertFalse(success)
     }
 }

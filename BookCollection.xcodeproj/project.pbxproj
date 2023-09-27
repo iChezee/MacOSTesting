@@ -119,7 +119,6 @@
 				360D1CF32ABB5D4600623F57 /* App */,
 				366504932ABB68B400B5FCDE /* Extensions */,
 				366504902ABB689F00B5FCDE /* Misc */,
-				360D1CFB2ABB649C00623F57 /* Networking */,
 				360D1CF42ABB5DC400623F57 /* View */,
 			);
 			path = BookCollection;
@@ -167,13 +166,6 @@
 				36DE49382AC4B37000917D6A /* AuthorsList */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		360D1CFB2ABB649C00623F57 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Networking;
 			sourceTree = "<group>";
 		};
 		366504902ABB689F00B5FCDE /* Misc */ = {

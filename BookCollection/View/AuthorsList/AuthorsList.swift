@@ -1,11 +1,15 @@
 import SwiftUI
 
 struct AuthorsList: View {
-    @ObservedObject private var viewModel = AuthorsListViewModel()
+    @ObservedObject private var viewModel: AuthorsListViewModel
     
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Author.name, ascending: true)],
                   animation: .default)
     private var authors: FetchedResults<Author>
+    
+    init(viewModel: AuthorsListViewModel = AuthorsListViewModel()) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         List(authors) { author in
@@ -42,4 +46,14 @@ struct AuthorsList: View {
         }
         .accessibilityIdentifier(AccLabels.AuthorsList.mainList)
     }
+}
+
+#Preview("Empty View") {
+    AuthorsList()
+        .preferredColorScheme(.dark)
+}
+
+#Preview("Added Authors") {
+    AuthorsList()
+        .preferredColorScheme(.light)
 }

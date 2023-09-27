@@ -3,17 +3,27 @@ import DependencyInjection
 import DataManagment
 
 class AuthorsListViewModel: ObservableObject {
-    @Injected private var dataManagment: DataManagment
+    private var dataManagment: DataManagment
     
     @Published var hasError = false
     @Published var error: Errors?
     
-    func add(_ name: String) async {
+    init(dataManagement: DataManagment = DependencyInjection.shared.resolveRequired(DataManagment.self)) {
+        self.dataManagment = dataManagement
+    }
+    
+    func add(_ name: String) async -> Bool {
+        if name.checkForSpecialSymbols() {
+            return false
+        }
+        
         let parameters = ["name": name]
         do {
             try await dataManagment.addItem(Author.self, parameters: parameters)
+            return true
         } catch {
             self.error = .addItem(error)
+            return false
         }
     }
     
