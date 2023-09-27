@@ -1,7 +1,7 @@
 import Foundation
 
 public enum AccLabels {
-    public enum MainView {
+    public enum AuthorsList {
         public static let addButton = "AddButton"
         public static let mainList = "MainList"
         public static func cellNavigationLink(_ modelName: String) -> String {

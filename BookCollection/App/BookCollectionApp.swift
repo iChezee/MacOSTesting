@@ -1,23 +1,32 @@
 import SwiftUI
+import DependencyInjection
 import DataManagment
 
 @main
 struct BookCollectionApp: App {
-    let persistenceController: PersistenceController
+    @Injected var dataManagment: DataManagment
+    let container = DependencyInjection.shared
+    let dataModelName = "BookCollection"
     
     init() {
-        persistenceController = DataManagment(modelName: "BookCollection").wrappedValue
+        registerDependecies()
     }
 
     var body: some Scene {
         WindowGroup {
             #if os(macOS)
             MacMainView()
-                .environment(\.managedObjectContext, persistenceController.viewContext)
+                .environment(\.managedObjectContext, dataManagment.viewContext)
             #elseif os(iOS)
             iOSMainView()
-                .environment(\.managedObjectContext, persistenceController.viewContext)
+                .environment(\.managedObjectContext, dataManagment.viewContext)
             #endif
+        }
+    }
+    
+    func registerDependecies() {
+        container.register(DataManagment.self ) { _ in
+            return PersistenceController.init(modelName: dataModelName)
         }
     }
 }
