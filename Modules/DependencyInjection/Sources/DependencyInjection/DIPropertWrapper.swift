@@ -1,5 +1,4 @@
 @propertyWrapper
-
 public struct Injected<Service> {
     public init() {}
     

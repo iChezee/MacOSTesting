@@ -17,7 +17,7 @@ struct AuthorsList: View {
                 .onLongPressGesture {
                     viewModel.delete(author: author)
                 }
-                .accessibilityIdentifier(AccLabels.AuthorsList.cellNavigationLink(author.name!))
+                .accessibilityIdentifier(AccLabels.AuthorsList.cellNavigationLink(author.name!)) // swiftlint:disable:this force_unwrapping
         }
         .toolbar {
             Button {

@@ -18,7 +18,7 @@ public protocol DIResolver {
 
 extension DIResolver {
     public func resolveRequired<Service>(_ serviceType: Service.Type) -> Service {
-        var result: Service!
+        var result: Service! // swiftlint:disable:this implicitly_unwrapped_optional
         do {
             result = try resolve(serviceType)
         } catch {

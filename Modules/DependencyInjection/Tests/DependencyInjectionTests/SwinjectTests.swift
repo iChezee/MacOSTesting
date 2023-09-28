@@ -8,7 +8,7 @@ final class SwinjectTests: XCTestCase {
     container.register(FetchService.self) { _ in FetchServiceMock() }
     
     container.register(DisplayService.self) { service in
-      DisplayServiceMock.init(fetchService: service.resolve(FetchService.self)!)
+      DisplayServiceMock.init(fetchService: service.resolve(FetchService.self)!) // swiftlint:disable:this force_unwrapping
     }
     
     

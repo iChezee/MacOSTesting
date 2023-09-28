@@ -1,13 +1,11 @@
-excluded:
-  - ${PWD}/DerivedData
-
 disabled_rules:
   - discarded_notification_center_observer
   - notification_center_detachment
   - orphaned_doc_comment
   - unused_capture_list
-  - trailing_closure
-  - implicitly_unwrapped_optional
+
+analyzer_rules:
+  - unused_import
 
 opt_in_rules:
   - array_init
@@ -15,7 +13,7 @@ opt_in_rules:
   - closure_end_indentation
   - closure_spacing
   - collection_alignment
-  - colon
+  - colon # promote to error
   - convenience_type
   - discouraged_object_literal
   - empty_collection_literal
@@ -24,6 +22,7 @@ opt_in_rules:
   - fatal_error_message
   - first_where
   - force_unwrapping
+  - implicitly_unwrapped_optional
   - last_where
   - legacy_random
   - literal_expression_end_indentation
@@ -50,6 +49,9 @@ attributes:
     - "@IBAction"
     - "@NSManaged"
     - "@objc"
+    - "@Injected"
+    - "@Published"
+    - "public"
 
 force_cast: warning
 force_try: warning
@@ -77,8 +79,8 @@ identifier_name:
     - to
 
 line_length:
-  warning: 200
-  error: 250
+  warning: 150
+  error: 180
   ignores_urls: true
   ignores_function_declarations: true
   ignores_comments: true

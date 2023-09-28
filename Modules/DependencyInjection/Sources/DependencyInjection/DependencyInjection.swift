@@ -14,7 +14,6 @@ public final class DependencyInjection: DIContainer {
     public func register<Service>(_ serviceType: Service.Type,
                                   instanceType: InstanceType,
                                   factory: @escaping (DIResolver) -> Service) {
-        
         container.register(serviceType) { resolver in
             return factory(SwinjectResolver(resolver))
         }
@@ -42,4 +41,3 @@ extension InstanceType {
         }
     }
 }
-

@@ -220,6 +220,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 360D1CE92ABB5CED00623F57 /* Build configuration list for PBXNativeTarget "BookCollection" */;
 			buildPhases = (
+				36714A762AC59F6300B32B5A /* Swiftlint */,
 				360D1CBB2ABB5CEA00623F57 /* Sources */,
 				360D1CBC2ABB5CEA00623F57 /* Frameworks */,
 				360D1CBD2ABB5CEA00623F57 /* Resources */,
@@ -343,6 +344,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		36714A762AC59F6300B32B5A /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd $SRCROOT\n\nif which swiftlint >/dev/null; then\n  echo \"Run swiftlint \"\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		360D1CBB2ABB5CEA00623F57 /* Sources */ = {
@@ -523,6 +546,7 @@
 				DEVELOPMENT_TEAM = 4DGEQ6753N;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookCollection/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -564,6 +588,7 @@
 				DEVELOPMENT_TEAM = 4DGEQ6753N;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookCollection/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;

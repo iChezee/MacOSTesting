@@ -28,7 +28,10 @@ final class AuthorsListViewModelTests: XCTestCase {
         let success = await viewModel.add(name)
         XCTAssertTrue(success)
         
-        guard let object = try controller.getObject(by: name, key: #keyPath(Author.name), entity: Author.self, context: controller.viewContext) else {
+        guard let object = try controller.getObject(by: name,
+                                                    key: #keyPath(Author.name),
+                                                    entity: Author.self,
+                                                    context: controller.viewContext) else {
             XCTFail("Object did not added")
             throw(CocoaError(.coreData))
         }
@@ -44,7 +47,10 @@ final class AuthorsListViewModelTests: XCTestCase {
         XCTAssertTrue(success)
         
         do {
-            let object = try controller.getObject(by: "Failed", key: #keyPath(Author.name), entity: Author.self, context: controller.viewContext)
+            let object = try controller.getObject(by: "Failed",
+                                                  key: #keyPath(Author.name),
+                                                  entity: Author.self,
+                                                  context: controller.viewContext)
             XCTAssertNil(object)
         } catch {
             XCTAssertTrue(viewModel.hasError)
@@ -60,13 +66,19 @@ final class AuthorsListViewModelTests: XCTestCase {
         let success = await setup.viewModel.add(name)
         XCTAssertTrue(success)
         
-        guard let object = try controller.getObject(by: name, key: #keyPath(Author.name), entity: Author.self, context: controller.viewContext) else {
+        guard let object = try controller.getObject(by: name,
+                                                    key: #keyPath(Author.name),
+                                                    entity: Author.self,
+                                                    context: controller.viewContext) else {
             XCTFail("Object did not added")
             throw(CocoaError(.coreData))
         }
         
         await viewModel.delete(author: object)
-        let removedObject = try controller.getObject(by: name, key: #keyPath(Author.name), entity: Author.self, context: controller.viewContext)
+        let removedObject = try controller.getObject(by: name,
+                                                     key: #keyPath(Author.name),
+                                                     entity: Author.self,
+                                                     context: controller.viewContext)
         XCTAssertNil(removedObject)
     }
     
