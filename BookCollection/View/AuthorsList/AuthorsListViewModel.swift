@@ -12,12 +12,13 @@ class AuthorsListViewModel: ObservableObject {
         self.dataManagment = dataManagement
     }
     
+    @discardableResult
     func add(_ name: String) async -> Bool {
         if name.checkForSpecialSymbols() {
             return false
         }
         
-        let parameters = ["name": name]
+        let parameters = [#keyPath(Author.name): name]
         do {
             try await dataManagment.addItem(Author.self, parameters: parameters)
             return true
@@ -65,7 +66,7 @@ extension AuthorsListViewModel {
         public var recoverySuggestion: String? {
             switch self {
             default:
-                return NSLocalizedString("ok.button", comment: "Ok")
+                return NSLocalizedString("Ok", comment: "Ok")
             }
         }
         

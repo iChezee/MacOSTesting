@@ -53,7 +53,16 @@ struct AuthorsList: View {
         .preferredColorScheme(.dark)
 }
 
-#Preview("Added Authors") {
-    AuthorsList()
-        .preferredColorScheme(.light)
+#Preview("Has AddItem error") {
+    let viewModel = AuthorsListViewModel()
+    viewModel.hasError = true
+    viewModel.error = .addItem(CocoaError(.coreData))
+    return AuthorsList(viewModel: viewModel)
+}
+
+#Preview("Has DeleteItem error") {
+    let viewModel = AuthorsListViewModel()
+    viewModel.hasError = true
+    viewModel.error = .deleteItem(CocoaError(.coreData))
+    return AuthorsList(viewModel: viewModel)
 }
