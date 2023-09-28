@@ -16,6 +16,7 @@
 		366504922ABB68B100B5FCDE /* Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366504912ABB68B000B5FCDE /* Sizes.swift */; };
 		366504992ABB68CD00B5FCDE /* AccessabilityEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366504982ABB68CD00B5FCDE /* AccessabilityEnums.swift */; };
 		3665049A2ABB68CD00B5FCDE /* AccessabilityEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366504982ABB68CD00B5FCDE /* AccessabilityEnums.swift */; };
+		36714A752AC592A300B32B5A /* BookCollection.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 36714A742AC592A300B32B5A /* BookCollection.xctestplan */; };
 		369A16BF2AC48FEA0036A334 /* BookCollection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 369A16BD2AC48FEA0036A334 /* BookCollection.xcdatamodeld */; };
 		369A16C52AC49C480036A334 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369A16C42AC49C480036A334 /* String+Extensions.swift */; };
 		36DE49332AC4AD3000917D6A /* DataManagment in Frameworks */ = {isa = PBXBuildFile; productRef = 36DE49322AC4AD3000917D6A /* DataManagment */; };
@@ -55,6 +56,7 @@
 		360D1CFF2ABB650600623F57 /* MacMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacMainView.swift; sourceTree = "<group>"; };
 		366504912ABB68B000B5FCDE /* Sizes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sizes.swift; sourceTree = "<group>"; };
 		366504982ABB68CD00B5FCDE /* AccessabilityEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessabilityEnums.swift; sourceTree = "<group>"; };
+		36714A742AC592A300B32B5A /* BookCollection.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = BookCollection.xctestplan; path = BookCollection/App/BookCollection.xctestplan; sourceTree = SOURCE_ROOT; };
 		369A16BE2AC48FEA0036A334 /* BookCollection.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookCollection.xcdatamodel; sourceTree = "<group>"; };
 		369A16C42AC49C480036A334 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		36DE49312AC4AD2400917D6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				360D1CCE2ABB5CEC00623F57 /* Preview Content */,
 				369A16BD2AC48FEA0036A334 /* BookCollection.xcdatamodeld */,
 				360D1CCB2ABB5CEC00623F57 /* Assets.xcassets */,
+				36714A742AC592A300B32B5A /* BookCollection.xctestplan */,
 				360D1CC22ABB5CEA00623F57 /* BookCollectionApp.swift */,
 			);
 			path = App;
@@ -321,6 +324,7 @@
 			files = (
 				360D1CD02ABB5CEC00623F57 /* Preview Assets.xcassets in Resources */,
 				360D1CCC2ABB5CEC00623F57 /* Assets.xcassets in Resources */,
+				36714A752AC592A300B32B5A /* BookCollection.xctestplan in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,7 +651,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 4DGEQ6753N;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MACOSX_DEPLOYMENT_TARGET = 13.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.illiahorevoi.BookCollectionUITests;
@@ -670,7 +674,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 4DGEQ6753N;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MACOSX_DEPLOYMENT_TARGET = 13.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.illiahorevoi.BookCollectionUITests;

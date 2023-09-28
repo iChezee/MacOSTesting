@@ -1,0 +1,51 @@
+{
+  "configurations" : [
+    {
+      "id" : "820AB5C9-FCA7-4899-BC42-36061930E21E",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:BookCollection.xcodeproj",
+      "identifier" : "360D1CBE2ABB5CEA00623F57",
+      "name" : "BookCollection"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:BookCollection.xcodeproj",
+        "identifier" : "360D1CD42ABB5CED00623F57",
+        "name" : "BookCollectionTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:BookCollection.xcodeproj",
+        "identifier" : "360D1CDE2ABB5CED00623F57",
+        "name" : "BookCollectionUITests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Modules\/DataManagment",
+        "identifier" : "DataManagmentTests",
+        "name" : "DataManagmentTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Modules\/DependencyInjection",
+        "identifier" : "DependencyInjectionTests",
+        "name" : "DependencyInjectionTests"
+      }
+    }
+  ],
+  "version" : 1
+}

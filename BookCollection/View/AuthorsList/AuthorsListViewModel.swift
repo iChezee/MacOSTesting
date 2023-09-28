@@ -22,6 +22,7 @@ class AuthorsListViewModel: ObservableObject {
             try await dataManagment.addItem(Author.self, parameters: parameters)
             return true
         } catch {
+            self.hasError.toggle()
             self.error = .addItem(error)
             return false
         }
@@ -32,6 +33,7 @@ class AuthorsListViewModel: ObservableObject {
         do {
             try dataManagment.delete(object: author)
         } catch {
+            self.hasError.toggle()
             self.error = .deleteItem(error)
         }
     }
