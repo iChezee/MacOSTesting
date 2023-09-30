@@ -4,8 +4,10 @@ import DataManagment
 
 @main
 struct BookCollectionApp: App {
-    @Injected var dataManagment: DataManagment
     let container = DependencyInjection.shared
+    @Injected var dataManagment: DataManagment
+    @ObservedObject var selectedStateModel = SelectedViewState()
+
     let dataModelName = "BookCollection"
     
     init() {
@@ -16,12 +18,12 @@ struct BookCollectionApp: App {
         WindowGroup {
             #if os(macOS)
             MacMainView()
-                .environment(\.managedObjectContext, dataManagment.viewContext)
             #elseif os(iOS)
             iOSMainView()
-                .environment(\.managedObjectContext, dataManagment.viewContext)
             #endif
         }
+        .environment(\.managedObjectContext, dataManagment.viewContext)
+        .environmentObject(selectedStateModel)
     }
     
     func registerDependecies() {

@@ -6,9 +6,17 @@ struct MacMainView: View {
         NavigationSplitView {
             AuthorsList()
         } content: {
-            Text("Hello")
+            if let selectedAuthor = selectedStateModel.selectedAuthor {
+                AuthorsBooks(author: selectedAuthor)
+            } else {
+                ZStack { }
+            }
         } detail: {
-            Text("Hello")
+            if let selectedBook = selectedStateModel.selectedBook {
+                ZStack { }
+            } else {
+                ZStack { }
+            }
         }
     }
 }

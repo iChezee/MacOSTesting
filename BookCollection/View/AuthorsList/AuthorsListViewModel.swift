@@ -14,6 +14,7 @@ class AuthorsListViewModel: ObservableObject {
     
     @discardableResult
     func add(_ name: String) async -> Bool {
+        // Check for special symbols because I don't know somewho who has special symbols except Elon's son
         if name.checkForSpecialSymbols() {
             return false
         }
