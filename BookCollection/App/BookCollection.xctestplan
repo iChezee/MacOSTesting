@@ -1,23 +1,19 @@
 {
   "configurations" : [
     {
-      "id" : "820AB5C9-FCA7-4899-BC42-36061930E21E",
-      "name" : "Test Scheme Action",
+      "id" : "C4EF7A6F-A76E-43CB-9F03-6F0A4BDF0CA5",
+      "name" : "Configuration 1",
       "options" : {
 
       }
     }
   ],
   "defaultOptions" : {
-    "targetForVariableExpansion" : {
-      "containerPath" : "container:BookCollection.xcodeproj",
-      "identifier" : "360D1CBE2ABB5CEA00623F57",
-      "name" : "BookCollection"
-    }
+    "testExecutionOrdering" : "random",
+    "testTimeoutsEnabled" : true
   },
   "testTargets" : [
     {
-      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:BookCollection.xcodeproj",
         "identifier" : "360D1CD42ABB5CED00623F57",
@@ -25,7 +21,6 @@
       }
     },
     {
-      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:BookCollection.xcodeproj",
         "identifier" : "360D1CDE2ABB5CED00623F57",
