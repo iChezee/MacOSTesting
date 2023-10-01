@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct AuthorsList: View {
+    private let selectedViewState = SelectedViewState.shared
     @ObservedObject private var viewModel: AuthorsListViewModel
     
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Author.name, ascending: true)],
@@ -14,7 +15,13 @@ struct AuthorsList: View {
     var body: some View {
         List(authors) { author in
             Text(author.name ?? "")
+                .onTapGesture {
+                    selectedViewState.selectedAuthor = author
+                }
                 .onLongPressGesture {
+                    if selectedViewState.selectedAuthor == author {
+                        selectedViewState.selectedAuthor = nil
+                    }
                     viewModel.delete(author: author)
                 }
                 .accessibilityIdentifier(AccLabels.AuthorsList.cellNavigationLink(author.name!)) // swiftlint:disable:this force_unwrapping

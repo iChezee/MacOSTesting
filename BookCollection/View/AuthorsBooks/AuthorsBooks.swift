@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct AuthorsBooks: View {
+    private let selectedViewState = SelectedViewState.shared
     @ObservedObject var viewModel = AuthorsBooksViewModel()
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Book.title, ascending: true)],
                   // swiftlint:disable:next force_unwrapping
@@ -12,6 +13,15 @@ struct AuthorsBooks: View {
     var body: some View {
         List(books) { book in
             Text(book.title ?? "")
+                .onTapGesture {
+                    selectedViewState.selectedBook = book
+                }
+                .onLongPressGesture {
+                    if selectedViewState.selectedBook == book {
+                        selectedViewState.selectedBook = nil
+                    }
+                    viewModel.delete(book: book)
+                }
         }
     }
 }

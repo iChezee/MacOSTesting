@@ -21,7 +21,7 @@
 		3672C8F12AC5EA17009D8C41 /* AuthorsBooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3672C8F02AC5EA17009D8C41 /* AuthorsBooksViewModel.swift */; };
 		3672C8F32AC6F98B009D8C41 /* SelectedViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3672C8F22AC6F98B009D8C41 /* SelectedViewState.swift */; };
 		3672C8F62AC89309009D8C41 /* BookText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3672C8F52AC89309009D8C41 /* BookText.swift */; };
-		369A16BF2AC48FEA0036A334 /* BookCollection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 369A16BD2AC48FEA0036A334 /* BookCollection.xcdatamodeld */; };
+		3672C8FB2AC99B74009D8C41 /* BookCollection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3672C8F92AC99B73009D8C41 /* BookCollection.xcdatamodeld */; };
 		369A16C52AC49C480036A334 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369A16C42AC49C480036A334 /* String+Extensions.swift */; };
 		36DE49332AC4AD3000917D6A /* DataManagment in Frameworks */ = {isa = PBXBuildFile; productRef = 36DE49322AC4AD3000917D6A /* DataManagment */; };
 		36DE49352AC4AD3300917D6A /* DependencyInjection in Frameworks */ = {isa = PBXBuildFile; productRef = 36DE49342AC4AD3300917D6A /* DependencyInjection */; };
@@ -65,9 +65,9 @@
 		3672C8F02AC5EA17009D8C41 /* AuthorsBooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsBooksViewModel.swift; sourceTree = "<group>"; };
 		3672C8F22AC6F98B009D8C41 /* SelectedViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedViewState.swift; sourceTree = "<group>"; };
 		3672C8F52AC89309009D8C41 /* BookText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookText.swift; sourceTree = "<group>"; };
-		369A16BE2AC48FEA0036A334 /* BookCollection.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookCollection.xcdatamodel; sourceTree = "<group>"; };
+		3672C8FA2AC99B74009D8C41 /* BookCollection.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookCollection.xcdatamodel; sourceTree = "<group>"; };
 		369A16C42AC49C480036A334 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
-		36DE49312AC4AD2400917D6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		36DE49312AC4AD2400917D6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36DE49362AC4B36700917D6A /* AuthorsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsList.swift; sourceTree = "<group>"; };
 		36DE493A2AC4B5AD00917D6A /* AuthorsListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsListViewModelTests.swift; sourceTree = "<group>"; };
 		36DE493C2AC4B69E00917D6A /* AuthorsListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsListTests.swift; sourceTree = "<group>"; };
@@ -124,9 +124,9 @@
 		360D1CC12ABB5CEA00623F57 /* BookCollection */ = {
 			isa = PBXGroup;
 			children = (
-				36DE49312AC4AD2400917D6A /* Info.plist */,
 				360D1CCD2ABB5CEC00623F57 /* BookCollection.entitlements */,
 				360D1CF32ABB5D4600623F57 /* App */,
+				3672C8F82AC99B73009D8C41 /* Data */,
 				366504932ABB68B400B5FCDE /* Extensions */,
 				366504902ABB689F00B5FCDE /* Misc */,
 				360D1CF42ABB5DC400623F57 /* View */,
@@ -161,8 +161,8 @@
 		360D1CF32ABB5D4600623F57 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				36DE49312AC4AD2400917D6A /* Info.plist */,
 				360D1CCE2ABB5CEC00623F57 /* Preview Content */,
-				369A16BD2AC48FEA0036A334 /* BookCollection.xcdatamodeld */,
 				360D1CCB2ABB5CEC00623F57 /* Assets.xcassets */,
 				36714A742AC592A300B32B5A /* BookCollection.xctestplan */,
 				360D1CC22ABB5CEA00623F57 /* BookCollectionApp.swift */,
@@ -214,6 +214,14 @@
 				3672C8F52AC89309009D8C41 /* BookText.swift */,
 			);
 			path = BookText;
+			sourceTree = "<group>";
+		};
+		3672C8F82AC99B73009D8C41 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3672C8F92AC99B73009D8C41 /* BookCollection.xcdatamodeld */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		369A16BA2AC48EB70036A334 /* Frameworks */ = {
@@ -403,11 +411,11 @@
 				3672C8EF2AC5E6D2009D8C41 /* AuthorsBooks.swift in Sources */,
 				3672C8F32AC6F98B009D8C41 /* SelectedViewState.swift in Sources */,
 				360D1CC32ABB5CEA00623F57 /* BookCollectionApp.swift in Sources */,
-				369A16BF2AC48FEA0036A334 /* BookCollection.xcdatamodeld in Sources */,
 				3672C8F62AC89309009D8C41 /* BookText.swift in Sources */,
 				36DE49372AC4B36700917D6A /* AuthorsList.swift in Sources */,
 				360D1D002ABB650600623F57 /* MacMainView.swift in Sources */,
 				3672C8F12AC5EA17009D8C41 /* AuthorsBooksViewModel.swift in Sources */,
+				3672C8FB2AC99B74009D8C41 /* BookCollection.xcdatamodeld in Sources */,
 				360D1CCA2ABB5CEB00623F57 /* iOSMainView.swift in Sources */,
 				369A16C52AC49C480036A334 /* String+Extensions.swift in Sources */,
 				366504922ABB68B100B5FCDE /* Sizes.swift in Sources */,
@@ -580,7 +588,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BookCollection/Info.plist;
+				INFOPLIST_FILE = BookCollection/App/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -622,7 +630,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BookCollection/Info.plist;
+				INFOPLIST_FILE = BookCollection/App/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -798,12 +806,12 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		369A16BD2AC48FEA0036A334 /* BookCollection.xcdatamodeld */ = {
+		3672C8F92AC99B73009D8C41 /* BookCollection.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				369A16BE2AC48FEA0036A334 /* BookCollection.xcdatamodel */,
+				3672C8FA2AC99B74009D8C41 /* BookCollection.xcdatamodel */,
 			);
-			currentVersion = 369A16BE2AC48FEA0036A334 /* BookCollection.xcdatamodel */;
+			currentVersion = 3672C8FA2AC99B74009D8C41 /* BookCollection.xcdatamodel */;
 			path = BookCollection.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

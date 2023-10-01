@@ -2,6 +2,7 @@ import SwiftUI
 import DependencyInjection
 import DataManagment
 
+// TODO: Move to SwiftData
 @main
 struct BookCollectionApp: App {
     let container = DependencyInjection.shared
