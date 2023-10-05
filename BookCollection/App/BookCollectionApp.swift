@@ -2,7 +2,7 @@ import SwiftUI
 import DependencyInjection
 import DataManagment
 
-// TODO: Move to SwiftData
+// TODO: Migrate to SwiftData
 @main
 struct BookCollectionApp: App {
     let container = DependencyInjection.shared
@@ -28,7 +28,7 @@ struct BookCollectionApp: App {
     }
     
     func registerDependecies() {
-        container.register(DataManagment.self ) { _ in
+        container.register(DataManagment.self) { _ in
             return PersistenceController.init(modelName: dataModelName)
         }
     }

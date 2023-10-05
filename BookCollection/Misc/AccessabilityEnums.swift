@@ -5,7 +5,14 @@ public enum AccLabels {
         public static let addButton = "AddButton"
         public static let mainList = "MainList"
         public static func cellNavigationLink(_ modelName: String) -> String {
-            "CellNavigationLink\(modelName)"
+            "AuthororsList: \(modelName)"
+        }
+    }
+    
+    enum AuthorsBooks {
+        public static let mainList = "AuthorsBooksMainList"
+        public static func authorsCell(_ modelName: String) -> String {
+            "BooksList: \(modelName)"
         }
     }
     

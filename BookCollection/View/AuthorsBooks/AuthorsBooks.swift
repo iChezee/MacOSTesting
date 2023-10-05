@@ -22,6 +22,8 @@ struct AuthorsBooks: View {
                     }
                     viewModel.delete(book: book)
                 }
+                .accessibilityIdentifier(AccLabels.AuthorsBooks.authorsCell(book.title ?? ""))
         }
+        .accessibilityIdentifier(AccLabels.AuthorsBooks.mainList)
     }
 }
