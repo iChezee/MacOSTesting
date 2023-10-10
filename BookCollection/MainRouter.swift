@@ -1,10 +1,3 @@
-//
-//  MainRouter.swift
-//  BookCollection
-//
-//  Created by ILLIA HOREVOI on 05.10.2023.
-//
-
 import Foundation
 import SwiftUI
 import DependencyInjection
