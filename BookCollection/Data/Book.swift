@@ -10,12 +10,11 @@ import Foundation
 import SwiftData
 
 
-@Model
-public class Book {
+@Model final class Book {
     var imageURL: URL?
     var text: String?
     var title: String
-    var author: Author
+    @Relationship(inverse: \Author.books) var author: Author
     
     init(imageURL: URL? = nil, text: String? = nil, title: String, author: Author) {
         self.imageURL = imageURL

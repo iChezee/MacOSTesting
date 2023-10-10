@@ -3,8 +3,7 @@ import SwiftData
 
 struct AuthorsList: View {
     private let selectedViewState = SelectedViewState.shared
-    @Environment(\.modelContext)
-    private var context
+    @Environment(\.modelContext) private var context
     
     @Query(sort: [SortDescriptor(\Author.name)], animation: .bouncy)
     private var authors: [Author]

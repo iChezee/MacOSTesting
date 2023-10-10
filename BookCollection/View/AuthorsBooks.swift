@@ -3,13 +3,11 @@ import SwiftData
 
 struct AuthorsBooks: View {
     private let selectedViewState = SelectedViewState.shared
-    @Environment(\.modelContext)
-    private var context
+    @Environment(\.modelContext) private var context
     
     private let author: Author
     
-    @Query(sort: \Book.title,
-           animation: .bouncy)
+    @Query(sort: \Book.title, animation: .bouncy)
     private var books: [Book]
     
     init(author: Author) {

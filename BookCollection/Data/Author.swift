@@ -10,11 +10,8 @@ import Foundation
 import SwiftData
 
 
-@Model
-final class Author {
+@Model final class Author {
     var name: String?
-    
-    @Relationship(inverse: \Book.author)
     var books: [Book] = []
     
     public init() { }

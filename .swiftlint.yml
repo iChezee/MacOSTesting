@@ -9,7 +9,6 @@ analyzer_rules:
 
 opt_in_rules:
   - array_init
-  - attributes
   - closure_end_indentation
   - closure_spacing
   - collection_alignment
@@ -42,16 +41,6 @@ opt_in_rules:
   - todo
   - multiline_arguments
   - multiline_parameters
-
-attributes:
-  always_on_same_line:
-    - "@IBSegueAction"
-    - "@IBAction"
-    - "@NSManaged"
-    - "@objc"
-    - "@Injected"
-    - "@Published"
-    - "public"
 
 force_cast: warning
 force_try: warning
