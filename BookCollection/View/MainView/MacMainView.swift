@@ -8,10 +8,10 @@ struct MacMainView: View {
         NavigationSplitView {
             AuthorsList()
         } content: {
-            if selectedStateModel.selectedAuthor != nil {
-                AuthorsBooks()
+            if let selectedAuthor = selectedStateModel.selectedAuthor {
+                AuthorsBooks(author: selectedAuthor)
             } else {
-                ZStack { }
+                EmptyView()
             }
         } detail: {
             if selectedStateModel.selectedBook != nil {

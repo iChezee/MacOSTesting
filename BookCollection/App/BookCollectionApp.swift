@@ -1,15 +1,12 @@
 import SwiftUI
 import DependencyInjection
-import DataManagment
+import ViewRouting
+import SwiftData
 
-// TODO: Migrate to SwiftData
 @main
 struct BookCollectionApp: App {
     let container = DependencyInjection.shared
-    @Injected var dataManagment: DataManagment
-    @ObservedObject var selectedStateModel = SelectedViewState()
-
-    let dataModelName = "BookCollection"
+    @StateObject var selectedStateModel = SelectedViewState()
     
     init() {
         registerDependecies()
@@ -20,16 +17,17 @@ struct BookCollectionApp: App {
             #if os(macOS)
             MacMainView()
             #elseif os(iOS)
-            iOSMainView()
+            ViewRoot(router: container.resolveRequired(RootRouter.self))
+                .preferredColorScheme(.light)
             #endif
         }
-        .environment(\.managedObjectContext, dataManagment.viewContext)
+        .modelContainer(for: [Author.self, Book.self])
         .environmentObject(selectedStateModel)
     }
     
     func registerDependecies() {
-        container.register(DataManagment.self) { _ in
-            return PersistenceController.init(modelName: dataModelName)
+        container.register(ViewRouter<RootRouterViewBuilder>.self) { _ in
+            return ViewRouter(for: RootRouterViewBuilder.self, initial: .mainScreen)
         }
     }
 }

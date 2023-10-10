@@ -1,6 +1,5 @@
 import SwiftUI
 
-// TODO: Adopt of refactor for mac
 public struct ViewRoot<RootView>: View where RootView: ViewRouterBuilder {
     @StateObject var router: ViewRouter<RootView>
     public var body: some View {

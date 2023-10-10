@@ -5,7 +5,7 @@ class SelectedViewState: ObservableObject {
     
     @Published var selectedAuthor: Author? {
         didSet {
-            if (selectedAuthor?.books?.contains(selectedBook as Any)) != nil {
+            if (selectedAuthor?.books.first { $0.id == selectedBook?.id } != nil) {
                 selectedBook = nil
             }
         }
